@@ -1,11 +1,15 @@
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-      Hawk hawk = new Hawk();
-      hawk.hunt();
-
-      Rabbit rabbit = new Rabbit();
-      rabbit.flee();
+      try {
+        FileWriter writer = new FileWriter("poem.txt"); 
+        writer.write("Roses are red");
+        writer.close();     
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
     
 }
